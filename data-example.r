@@ -2,7 +2,7 @@ library(datasets)
 library(jsonlite)
 library(readxl)
 
-df <- cars[1:6, ]
+data_frame <- cars[1:6, ]
 
 mediana <- function(vetor) {
     vetor <- sort(vetor)
@@ -37,11 +37,11 @@ cars_medianas <- data.frame("Variaveis" = nomes, "Medianas" = medianas)
 
 # Leitura de planilhas tipo CSV, XLSX e consumo de API
 
-df <- read.csv("data/dados.csv", sep = ";", dec = ",")
+data_frame <- read.csv("data/dados.csv", sep = ";", dec = ",")
 
-df <- data.frame(read_xlsx("data/dados.xlsx"))
+data_frame <- data.frame(read_xlsx("data/dados.xlsx"))
 
-df <- fromJSON(
+data_frame <- fromJSON(
     "http://educacao.dadosabertosbr.com/api/escolas/buscaavancada?
     situacaoFuncionamento=1&
     energiaInexistente=on&
